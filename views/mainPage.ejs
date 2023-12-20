@@ -32,8 +32,36 @@
       <% tareas.forEach(details => {%>
       <li class="todo-list-item">
         <div class="todo-list-item-name"><%= details.content %></div>
+        <% if(details.state === "Done") {%>
+        <a href="/remove/<%= details._id %>">
+          <span class="close">Eliminar</span>
+        </a>
+        <% } else { %>
+        <a href=>
+          <span>Marca como realizada</span>
+        </a>
+        <% }%>
       </li>
       <% }) %>
     </ul>
   </div>
+
+  <ul>
+    <li class="todo-list-item">
+      <div>
+        <a href="/removeAll">
+          <div>--</div>
+          <span class="close">ELIMINAR TODAS LAS TAREAS</span>
+        </a>
+      </div>
+    </li>
+    <li class="todo-list-item">
+      <div>
+        <a href="/removeMarked">
+          <div>--</div>
+          <span class="close">ELIMINAR TAREAS REALIZADAS</span>
+        </a>
+      </div>
+    </li>
+  </ul>
 </body>

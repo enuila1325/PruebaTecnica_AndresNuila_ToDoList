@@ -39,3 +39,18 @@ app.get("/", function (req, res) {
 app.listen(3000, function () {
   console.log("Servidor corriendo en puerto 3000");
 });
+
+// delete individually each task
+app.route("/remove/:id").get((req, res) => {
+  const id = req.params.id;
+  taskModel.findByIdAndDelete(id).then(() => {
+    res.redirect("/");
+  });
+});
+
+// delete all
+app.route("/removeAll").get((req, res) => {
+  taskModel.deleteMany({}).then(() => {
+    res.redirect("/");
+  });
+});
