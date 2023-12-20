@@ -1,0 +1,27 @@
+{
+  "name": "pruebatecnica_todolist",
+  "version": "1.0.0",
+  "description": "ToDo List en JS y almacenamiento en MongoDB",
+  "main": "sever.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enuila1325/PruebaTecnica_AndresNuila_ToDoList.git"
+  },
+  "author": "Andres Nuila",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/enuila1325/PruebaTecnica_AndresNuila_ToDoList/issues"
+  },
+  "homepage": "https://github.com/enuila1325/PruebaTecnica_AndresNuila_ToDoList#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.0.3",
+    "nodemon": "^3.0.2"
+  }
+}
