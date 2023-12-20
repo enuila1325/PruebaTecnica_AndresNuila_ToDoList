@@ -35,11 +35,6 @@ app.get("/", function (req, res) {
   });
 });
 
-// listening on port 3000
-app.listen(3000, function () {
-  console.log("Servidor corriendo en puerto 3000");
-});
-
 // delete individually each task
 app.route("/remove/:id").get((req, res) => {
   const id = req.params.id;
@@ -53,4 +48,24 @@ app.route("/removeAll").get((req, res) => {
   taskModel.deleteMany({}).then(() => {
     res.redirect("/");
   });
+});
+
+// update (marcar como realizada)
+app.route("/edit/:id").get((req, res) => {
+  const id = req.params.id;
+  taskModel.findByIdAndUpdate(id, { state: "Done" }).then(() => {
+    res.redirect("/");
+  });
+});
+
+//delete only marked ones as "Done"
+app.route("/removeMarked").get((req, res) => {
+  taskModel.deleteMany({ state: "Done" }).then(() => {
+    res.redirect("/");
+  });
+});
+
+// listening on port 3000
+app.listen(3000, function () {
+  console.log("Servidor corriendo en puerto 3000");
 });
