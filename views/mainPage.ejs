@@ -14,17 +14,26 @@
   />
 </head>
 <body>
-    <div class="todo-container">
-      <div class="header" id="DIV">
-        <h2>Lista de quehaceres</h2>
-        <form action="/" method="POST">
-          <input
-            type="text"
-            name="content"
-            id="Input"
-            placeholder="Nueva Tarea..."
-          />
-          <button type="submit"><span class="addBtn">Añadir</span></button>
-        </form>
+  <div class="todo-container">
+    <div class="header" id="DIV">
+      <h2>Lista de quehaceres</h2>
+      <form action="/" method="POST">
+        <input
+          type="text"
+          name="content"
+          id="Input"
+          placeholder="Nueva Tarea..."
+        />
+        <button type="submit"><span class="addBtn">Añadir</span></button>
+      </form>
     </div>
+
+    <ul>
+      <% tareas.forEach(details => {%>
+      <li class="todo-list-item">
+        <div class="todo-list-item-name"><%= details.content %></div>
+      </li>
+      <% }) %>
+    </ul>
+  </div>
 </body>
