@@ -11,7 +11,7 @@ app.set("view engine", "ejs");
 
 // Conexion a base de datos
 mongoose.connect(
-  "mongodb+srv://enuila:enuila1325@atlascluster.m2rreiy.mongodb.net/"
+  "mongodb+srv://public:public1234@atlascluster.m2rreiy.mongodb.net/?retryWrites=true&w=majority"
 );
 
 // CRUD
